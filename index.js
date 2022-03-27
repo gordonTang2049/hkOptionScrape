@@ -47,25 +47,11 @@ const fetchData = async (URL) => {
     "table.table.fixed-freeze-tb-container.alttable.stickysort-header-table.sticky-enabled > tbody > tr"
     );
   
-<<<<<<< HEAD
-  
-=======
->>>>>>> 506eea940639244ec16edb6ffc16f1304334096c
   for (let row of rows) {
 
     const data = await row.$(".btn_detail");
 
     const link = await data.evaluate((el) => el.getAttribute("href"));
-<<<<<<< HEAD
-    
-    // console.log(link)
-    // console.log(data);
-  }
-
-  const numPage = await page.$$("li.page-number")
-  
-  
-=======
 
   }
 
@@ -78,7 +64,6 @@ const fetchData = async (URL) => {
 
   console.log(pageNum)
 
->>>>>>> 506eea940639244ec16edb6ffc16f1304334096c
   // const form = await page.$('a#topbar-search');
   // await form.evaluate( form => form.click() );
   // await page.$eval( 'a#topbar-search', form => form.click() );
