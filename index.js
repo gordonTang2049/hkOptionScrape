@@ -47,16 +47,22 @@ const fetchData = async (URL) => {
     "table.table.fixed-freeze-tb-container.alttable.stickysort-header-table.sticky-enabled > tbody > tr"
     );
   
-  console.log(rows.length)
-  
   for (let row of rows) {
 
     const data = await row.$(".btn_detail");
 
-    // const link = await data.evaluate((el) => el.getAttribute("href"));
+    const link = await data.evaluate((el) => el.getAttribute("href"));
 
-    // console.log(data);
   }
+
+  const pageNum = await page.evaluate(()=>{
+    const el = $('li.page-number')  
+    // const el = document.querySelectorAll('li.page-number')
+    const pageNum= el[0].innerText
+    return pageNum
+  })
+
+  console.log(pageNum)
 
   // const form = await page.$('a#topbar-search');
   // await form.evaluate( form => form.click() );
